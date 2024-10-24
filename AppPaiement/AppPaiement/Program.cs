@@ -17,8 +17,8 @@ namespace AppPaiement
                 Console.WriteLine();
 
             }
-        
 
+            
 
 
             var paiement1 = new Paypal(750.00m, "Achat de logiciels", "kenfackjolivet@gmail.com");
@@ -31,6 +31,14 @@ namespace AppPaiement
                 paiement.AfficherDetails();
                 Console.WriteLine();
             }
+
+            var utilisateur1 = new Utilisateur(200.00m, "frais de transport", "Jolivet");
+            var utilisateur2 = new Utilisateur(30000.00m, "frais de scolariter", "Fon");
+            utilisateur1.AjouterPaiement(paiement1);
+            utilisateur2.AjouterPaiement(paiement2);
+            utilisateur1.AfficherInfos();
+            utilisateur2.AfficherInfos();
+
         }
     }
 }
