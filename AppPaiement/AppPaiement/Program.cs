@@ -21,10 +21,10 @@ namespace AppPaiement
             
 
 
-            var paiement1 = new Paypal(750.00m, "Achat de logiciels", "kenfackjolivet@gmail.com");
-            var paiement2 = new Paypal(100.00m, "Paiement abonnement", "jolivet.fonkenfack@monboreal.ca");
+            var paypal1 = new Paypal(750.00m, "Achat de logiciels", "kenfackjolivet@gmail.com");
+            var paypal2 = new Paypal(100.00m, "Paiement abonnement", "jolivet.fonkenfack@monboreal.ca");
 
-            List<Paypal> paiements = new List<Paypal> { paiement1, paiement2 };
+            List<Paypal> paiements = new List<Paypal> { paypal1, paypal2 };
 
             foreach (var paiement in paiements)
             {
@@ -34,10 +34,18 @@ namespace AppPaiement
 
             var utilisateur1 = new Utilisateur(200.00m, "frais de transport", "Jolivet");
             var utilisateur2 = new Utilisateur(30000.00m, "frais de scolariter", "Fon");
-            utilisateur1.AjouterPaiement(paiement1);
-            utilisateur2.AjouterPaiement(paiement2);
+            var carteCredit = new CarteCredit(150.00m, "Achat de vêtements", 123456789);
+            var paypal = new Paypal(100.00m, "Paiement abonnement", "utilisateur9@example.com");
+
+
+            utilisateur1.AjouterPaiement(paypal1);
+            utilisateur2.AjouterPaiement(paypal2);
             utilisateur1.AfficherInfos();
             utilisateur2.AfficherInfos();
+
+
+            
+           
 
         }
     }
